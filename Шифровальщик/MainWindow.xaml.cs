@@ -22,6 +22,7 @@ namespace Шифровальщик
         {
             string text_start = start.Text; // записываем введенную  пользователем информация
             char[] buffer = text_start.ToCharArray();
+            int encryptedCount = 0; // счетчик зашифрованных символов
             for (int i = 0; i < buffer.Length; i++)
             {
                 char letter = buffer[i];
@@ -32,24 +33,29 @@ namespace Шифровальщик
                     if (letter >= 'A' && letter <= 'Z') //для заглавных латинских букв
                     {
                         buffer[i] = (char)('Z' - (letter - 'A'));
+                        encryptedCount++;
                     }
                     else if (letter >= 'a' && letter <= 'z') //для строчных латинских букв
                     {
                         buffer[i] = (char)('z' - (letter - 'a'));
+                        encryptedCount++;
                     }
                     else if (letter >= 'А' && letter <= 'Я') //для заглавных букв кириллица
                     {
                         buffer[i] = (char)('Я' - (letter - 'А'));
+                        encryptedCount++;
                     }
                     else if (letter >= 'а' && letter <= 'я') //для строчных букв кириллица
                     {
                         buffer[i] = (char)('я' - (letter - 'а'));
+                        encryptedCount++;
                     }
 
                 }
             }
 
             end.Text = new string(buffer); //выводим зашифрованную информацию 
+            MessageBox.Show($"Зашифровано символов: {encryptedCount}"); // выводим количество зашифрованных символов
         }          
         
     }
