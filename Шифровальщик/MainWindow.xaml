@@ -1,0 +1,18 @@
+﻿<Window x:Class="Шифровальщик.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Шифровальщик"
+        mc:Ignorable="d"
+        Title="Шифровальщик" Height="450" Width="800" Background="LawnGreen">
+    <Grid>
+        <StackPanel Margin="15">
+            <TextBlock Text="Введите текст:" FontSize="22" ></TextBlock>
+            <TextBox Name="start" Height="25" Width="700" HorizontalAlignment="Left"></TextBox>
+            <Button Name="Button" Content="Зашифровать" Height="40" Width="200" HorizontalAlignment="Left" Margin="0 10" Click="Schifr"></Button>
+            <TextBlock Text="Результат:" FontSize="22" ></TextBlock>
+            <TextBox Name="end" Height="25" Width="700" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
